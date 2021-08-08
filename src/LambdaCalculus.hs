@@ -91,3 +91,23 @@ eval ctx t = case eval' ctx t of
     Nothing -> t
 
 
+tru = Abs "t" (Abs "f" (Var 1 0))
+fls = Abs "t" (Abs "f" (Var 0 0))
+
+
+v = Abs "v" (Var 0 0)
+w = Abs "w" (Var 0 0)
+
+--test = Abs "l" (Abs "m" (Abs "n" ()))
+
+
+
+ctx = [("t", NameBind), ("f", NameBind), ("l", NameBind),
+        ("m", NameBind), ("n", NameBind)]
+
+-- >>> eval [] (App tru (App v w))
+-- Abs "f" (Abs "w" (Var 1 1))
+
+-- >>> isVal ctx w
+-- True
+--

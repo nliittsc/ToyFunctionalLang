@@ -25,14 +25,24 @@ source-repository head
 
 library
   exposed-modules:
+      AppliedLambdaCalculus
       LambdaCalculus
+      LambdaParser
       Lib
+      Syntax
   other-modules:
       Paths_toy_lang_v1
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , containers
+    , directory
+    , filepath
+    , mtl
+    , parsec
+    , text
+    , unordered-containers
   default-language: Haskell2010
 
 executable toy-lang-v1-exe
@@ -44,7 +54,14 @@ executable toy-lang-v1-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , directory
+    , filepath
+    , mtl
+    , parsec
+    , text
     , toy-lang-v1
+    , unordered-containers
   default-language: Haskell2010
 
 test-suite toy-lang-v1-test
@@ -57,5 +74,12 @@ test-suite toy-lang-v1-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , containers
+    , directory
+    , filepath
+    , mtl
+    , parsec
+    , text
     , toy-lang-v1
+    , unordered-containers
   default-language: Haskell2010
